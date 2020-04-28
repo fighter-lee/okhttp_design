@@ -27,7 +27,9 @@ public class MainActivity extends AppCompatActivity {
 
 
     String run(String url) throws IOException {
-        OkHttpClient client = new OkHttpClient();
+        OkHttpClient client = new OkHttpClient.Builder()
+                .addInterceptor(new LoggingInterceptor())
+                .build();
         Request request = new Request.Builder()
                 .url(url)
                 .build();

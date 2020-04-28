@@ -4,6 +4,8 @@
 
 ## 1. 使用
 
+[document](https://square.github.io/okhttp/)
+
 异步调用
 
 ```java
@@ -65,3 +67,11 @@ Response response = client.newCall(request).execute();
 ​	Dispatcher分析
 
 ### 3.3 拦截器
+
+https://www.jianshu.com/p/8d6eb5efc36c
+
+![](.\doc\jpg\拦截器.jpg)
+
+1. 责任链模式
+
+   
