@@ -39,11 +39,11 @@ Response response = client.newCall(request).execute();
 
 ### 2.1 整体调用流程
 
-![](.\doc\jpg\okhttp 时序图.jpg)
+![](.\doc\jpg\okhttp时序图.jpg)
 
 #### 2.2 封装请求
 
-1. Http协议报文封装在Request中；
+1. Http协议报文封装在Request中； 封装在Request中；
 2. 真正的请求封装在Call/RealCall中，RealCall对象持有OkHttpClient对象、Request对象以及Transmitter对象；
 
 #### 2.3 发送请求
@@ -68,10 +68,13 @@ Response response = client.newCall(request).execute();
 
 ### 3.3 拦截器
 
-https://www.jianshu.com/p/8d6eb5efc36c
-
 ![](.\doc\jpg\拦截器.jpg)
 
 1. 责任链模式
+2. RetryAndFollowUpInterceptor 重定向拦截器
+3. BridgeInterceptor 请求头报文填充
+4. CacheInterceptor 缓存处理
+5. ConnectInterceptor 开启连接，跳转下一拦截器
+6. CallServerInterceptor 真正发起网络请求
 
    

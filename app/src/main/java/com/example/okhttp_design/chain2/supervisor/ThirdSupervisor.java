@@ -31,6 +31,12 @@ public class ThirdSupervisor extends AbsSupervisor {
             return response;
         } else {
             Response response = chain.proceed(request);
+            //            if (response.isApprove()) {
+            //                if (request.getName().equals("小李")) {
+            //                    response.setApprove(false);
+            //                    response.setRemake("就是不让你请，能咋地");
+            //                }
+            //            }
             return response;
         }
     }
